@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Social Problem Reporter App
 
-## Getting Started
+A full-stack web application that enables users to report local social issues, view problems, and track resolutions in their community.
 
-First, run the development server:
+---
 
+## 🚀 Tech Stack
+
+| Area         | Tech                                      |
+|--------------|-------------------------------------------|
+| Framework    | [Next.js (App Router)](https://nextjs.org/) |
+| Styling      | [Tailwind CSS](https://tailwindcss.com/) + [ShadCN UI](https://ui.shadcn.com) |
+| Database     | [Supabase](https://supabase.com/) (Auth + DB) |
+| Icons        | [Lucide Icons](https://lucide.dev/)       |
+| Hosting      | [Vercel](https://vercel.com/)             |
+| Versioning   | Git + GitHub (PR-based)                   |
+
+---
+
+## 📁 Folder Structure (App Router)
+
+/app
+/login → Auth page (Dev 1)
+/register → Registration page (Dev 1)
+/dashboard → User stats + recent activity (Dev 2)
+/report → Report submission form (Dev 3)
+/issues → Browse all problems (Dev 4)
+/map → Map with location pins (Dev 5)
+/profile → User details and history (Dev 6)
+/admin → Admin panel for moderation (Dev 7)
+/about → About page (Dev 8)
+/contact → Contact form (Dev 8)
+/components → Shared UI components (Dev 9)
+/lib → Utility libraries
+/styles → Global styles
+/utils → Helper functions
+/schemas → Schema validations
+
+yaml
+Copy
+Edit
+
+---
+
+## 👥 Team & Responsibilities
+
+| Member    | Tasks Assigned                            |
+|-----------|--------------------------------------------|
+| Dev 1     | `/login`, `/register` (Supabase Auth)      |
+| Dev 2     | `/dashboard`                               |
+| Dev 3     | `/report`                                  |
+| Dev 4     | `/issues`                                  |
+| Dev 5     | `/map`                                     |
+| Dev 6     | `/profile`                                 |
+| Dev 7     | `/admin`                                   |
+| Dev 8     | `/about`, `/contact`                       |
+| Dev 9     | Shared UI components (navbar, footer, etc) |
+| Team Lead | Layout, config, PR reviews, deployment     |
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repository
 ```bash
+git clone https://github.com/your-username/social-problem-app.git
+cd social-problem-app
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Create environment variables
+bash
+Copy
+Edit
+cp .env.example .env
+Ask the team lead for Supabase credentials and paste into .env.
+
+4. Run development server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔄 Git Workflow
+Create feature branch from dev:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+bash
+Copy
+Edit
+git checkout dev
+git pull origin dev
+git checkout -b yourname/feature-name
+After coding:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+bash
+Copy
+Edit
+git add .
+git commit -m "feat/ab: add report page"
+git push origin yourname/feature-name
+Create a Pull Request → Base: dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Request review from another dev
 
-## Learn More
+After approval → Merge to dev
 
-To learn more about Next.js, take a look at the following resources:
+✅ No direct commits to main
+✅ PR must be reviewed before merging
+✅ Use proper commit message format:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Type	Example
+feat/	feat/rp: add login page
+fix/	fix/aj: resolve dashboard bug
+chore/	chore/sk: update dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧠 Developer Tips
+Use Tailwind + ShadCN for all UI
 
-## Deploy on Vercel
+Reuse components across pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Comment your code for clarity
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Communicate blockers early
+
+Keep UI consistent and clean
+
